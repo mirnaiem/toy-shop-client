@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
-const {user}=useContext(AuthContext)
-
+const {user,logOutUser}=useContext(AuthContext)
+const handleLogOut=()=>{
+ logOutUser()
+}
  const navMenu = <>
   <li><Link to="/">Home</Link></li>
   <li><Link to="/alltoys">All Toys</Link></li>
@@ -36,7 +38,7 @@ const {user}=useContext(AuthContext)
    </div>
    <div className="navbar-end md:gap-4">
     {
-     user?<button className="btn">LogOut</button>:
+     user?<button onClick={handleLogOut} className="btn">LogOut</button>:
      <div>
    <Link to="/login"><button className="btn">Login</button></Link>
     <Link to="/register"><button className="btn">Sign Up</button></Link>
