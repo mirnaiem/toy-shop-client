@@ -8,7 +8,7 @@ const AddToys = () => {
    <h2 className=' text-4xl w-2/5 text-center text-gray-400 font-bold capitalize '>Unlock Your Child's Imagination and engineering skills with building and construction toys.</h2>
    <img className='h-[200px] w-[300px] rounded-full' src="https://img.freepik.com/free-photo/father-daughter-playing-educational-games-together_155003-1009.jpg?size=626&ext=jpg&ga=GA1.2.1419972379.1680192737&semt=ais" alt="" />
    </div>
-  <h2 className='text-center my-10 text-cyan-400 font-serif  text-4xl'>Add Your Favorite Toy</h2>
+  <h2 className='text-center my-10  font-serif  text-4xl'>Add Your Favorite <span className='text-orange-500'>Toy</span> </h2>
         
       <form className='w-full'>
        <div className='grid w-4/5 mx-auto gap-4 grid-cols-1 md:grid-cols-3 '>

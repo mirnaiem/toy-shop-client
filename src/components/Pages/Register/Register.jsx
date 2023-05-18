@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Register = () => {
+ const {user,createUser}=useContext(AuthContext)
+
+ const handleRegister=event=>{
+  event.preventDefault()
+  const form=event.target;
+  const email=form.email.value;
+  const password=form.password.value;
+  createUser(email,password)
+   .then(result=>{
+    const createdUser=result.user
+   })
+   .catch(error=>{console.log(error)})
+  
+ }
  return (
   <div className="text-center mb-16">
 
@@ -10,7 +25,8 @@ const Register = () => {
 
 
    <div className="  p-4 w-1/3 mx-auto rounded-lg shadow-2xl bg-base-100">
-    <div className="">
+  <form onSubmit={handleRegister}>
+  <div className="">
      <div className="form-control">
       <label className="label">
        <span className="label-text">Name</span>
@@ -70,6 +86,7 @@ const Register = () => {
 
         </div>
      </div>
+  </form>
     <h2 className='py-3'>Already  have an account? Please <Link className='text-purple-700 underline' to="/login">LogIn</Link></h2>
     </div>
    </div>

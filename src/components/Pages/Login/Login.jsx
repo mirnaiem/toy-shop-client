@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const Login = () => {
+ const {user,loginUser}=useContext(AuthContext)
+
+const handleLogin=event=>{
+ event.preventDefault()
+ const form=event.target;
+ const email=form.email.value;
+ const password=form.password.value;
+ loginUser(email,password)
+  .then(result=>{
+   const loggedUser=result.user;
+   console.log(loggedUser)
+  })
+  .catch(error=>{console.log(error)})
+ 
+}
  return (
   <div className="text-center min-h-screen">
 
@@ -10,19 +26,20 @@ const Login = () => {
 
 
    <div className="  w-full max-w-sm mx-auto shadow-2xl bg-base-100">
-    <div className="card-body">
+   <form onSubmit={handleLogin}>
+   <div className="card-body">
      <div className="form-control">
       <label className="label">
        <span className="label-text">Email</span>
       </label>
-      <input type="text" name='email' placeholder="email" className="input input-bordered" />
+      <input type="email" name='email' placeholder="email" className="input input-bordered" required />
      </div>
      <div className="form-control">
       <label className="label">
        <span className="label-text">Password</span>
       </label>
-      <input type="password" name='password' placeholder="password" className="input input-bordered" />
-      <label className="label">
+      <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
+      <label className="label" >
        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
       </label>
      </div>
@@ -59,6 +76,7 @@ const Login = () => {
 
         </div>
      </div>
+   </form>
     <h2 className='py-3'>Don't have an account? Please <Link className='text-purple-700 underline' to="/register">Sign Up</Link></h2>
     </div>
    </div>
