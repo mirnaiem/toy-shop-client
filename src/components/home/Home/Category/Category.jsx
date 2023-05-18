@@ -14,19 +14,19 @@ const Category = () => {
             className="py-4 px-6 text-gray-600 hover:text-gray-800 font-semibold cursor-pointer leading-none"
             selectedClassName="text-gray-900 border-b-2 border-blue-500"
           >
-            Electronics
+            Construction Vehicle Toys
           </Tab>
           <Tab
             className="py-4 px-6 text-gray-600 hover:text-gray-800 font-semibold cursor-pointer leading-none"
             selectedClassName="text-gray-900 border-b-2 border-blue-500"
           >
-            Clothing
+            Architectural Building Kits
           </Tab>
           <Tab
             className="py-4 px-6 text-gray-600 hover:text-gray-800 font-semibold cursor-pointer leading-none"
             selectedClassName="text-gray-900 border-b-2 border-blue-500"
           >
-            Home &amp; Kitchen
+            Interlocking Building Toys
           </Tab>
         </TabList>
 
