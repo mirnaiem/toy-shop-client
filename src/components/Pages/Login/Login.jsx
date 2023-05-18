@@ -59,7 +59,7 @@ const Login = () => {
 
         </div>
      </div>
-    <h2 className='py-3'>Don't have an account? Please <Link className='text-purple-700 underline' to="/register">SignIn</Link></h2>
+    <h2 className='py-3'>Don't have an account? Please <Link className='text-purple-700 underline' to="/register">Sign Up</Link></h2>
     </div>
    </div>
   
