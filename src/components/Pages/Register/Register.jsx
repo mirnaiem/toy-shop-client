@@ -3,14 +3,20 @@ import { Link } from 'react-router-dom';
 
 const Register = () => {
  return (
-  <div className="text-center min-h-screen">
+  <div className="text-center mb-16">
 
    <h1 className="text-5xl font-bold text-cyan-500">Register!</h1>
 
 
 
-   <div className="  w-full max-w-sm mx-auto shadow-2xl bg-base-100">
-    <div className="card-body">
+   <div className="  p-4 w-1/3 mx-auto rounded-lg shadow-2xl bg-base-100">
+    <div className="">
+     <div className="form-control">
+      <label className="label">
+       <span className="label-text">Name</span>
+      </label>
+      <input type="text" name='name' placeholder="name" className="input input-bordered" />
+     </div>
      <div className="form-control">
       <label className="label">
        <span className="label-text">Email</span>
@@ -22,9 +28,14 @@ const Register = () => {
        <span className="label-text">Password</span>
       </label>
       <input type="password" name='password' placeholder="password" className="input input-bordered" />
+      
+     </div>
+     <div className="form-control">
       <label className="label">
-       <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+       <span className="label-text">Photo URL</span>
       </label>
+      <input type="text" name='photo' placeholder="photo url" className="input input-bordered" />
+     
      </div>
      <div className="form-control mt-6">
       <button className="btn border-0 bg-cyan-600">Login</button>
