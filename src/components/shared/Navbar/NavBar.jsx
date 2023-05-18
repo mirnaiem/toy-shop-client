@@ -32,9 +32,10 @@ const NavBar = () => {
      {navMenu}
     </ul>
    </div>
-   <div className="navbar-end">
-    <a className="btn">Get started</a>
-    
+   <div className="navbar-end md:gap-4">
+    <Link to="/login"><button className="btn">Login</button></Link>
+    <Link to="/register"><button className="btn">Sign In</button></Link>
+    <button className="btn">LogOut</button>
    </div>
   </div>
  );
