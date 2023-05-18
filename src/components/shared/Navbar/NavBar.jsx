@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const NavBar = () => {
+const {user}=useContext(AuthContext)
 
  const navMenu = <>
   <li><Link to="/">Home</Link></li>
@@ -33,9 +35,14 @@ const NavBar = () => {
     </ul>
    </div>
    <div className="navbar-end md:gap-4">
-    <Link to="/login"><button className="btn">Login</button></Link>
+    {
+     user?<button className="btn">LogOut</button>:
+     <div>
+   <Link to="/login"><button className="btn">Login</button></Link>
     <Link to="/register"><button className="btn">Sign Up</button></Link>
-    <button className="btn">LogOut</button>
+   </div>
+    }
+   
    </div>
   </div>
  );
