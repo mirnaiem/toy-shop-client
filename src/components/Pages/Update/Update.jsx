@@ -34,7 +34,7 @@ const Update = () => {
    console.log(data)})
  }
  return (
-  <div>
+  <div  className='my-10'>
    <h2 className='text-center my-10  font-serif  text-4xl'>Update Your <span className='text-[#ff3300]'>Toy</span> </h2>
     <form onSubmit={handleUpdate} className='w-1/2 mx-auto'>
        
