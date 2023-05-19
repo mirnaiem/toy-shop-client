@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MyToy = ({toy,index,handleDelete}) => {
  const {
@@ -6,7 +7,7 @@ const MyToy = ({toy,index,handleDelete}) => {
   name,
  category,
   price,
-  
+  _id,
   quantity,
   
   }=toy;
@@ -22,8 +23,8 @@ const MyToy = ({toy,index,handleDelete}) => {
   <td>{price}</td> 
   <td className='flex gap-4'>
    <button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>View Details</button>
-   <button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'> Edit</button>
-   <button onClick={handleDelete} className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>x</button>
+  <Link to={`/update/${_id}`}> <button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'> Edit</button></Link>
+   <button onClick={()=>handleDelete(_id)} className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>x</button>
   </td>
 </tr>
  );
