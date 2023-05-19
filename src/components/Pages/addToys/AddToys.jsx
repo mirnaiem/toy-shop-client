@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddToys = () => {
 const {user}=useContext(AuthContext)
@@ -35,7 +36,17 @@ const {user}=useContext(AuthContext)
       
     })
     .then(res=>res.json())
-    .then(data=>console.log(data))
+    .then(data=>{console.log(data)
+    if(data.insertedId){
+      Swal.fire({
+        title: 'success!',
+        text: 'Toy has been added successfully',
+        icon: 'success',
+        confirmButtonText: 'ok'
+      })
+      form.reset()
+    }
+    })
     console.log(toy)
   }
  return (
