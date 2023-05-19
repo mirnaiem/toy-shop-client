@@ -17,7 +17,9 @@ const {user}=useContext(AuthContext)
    console.log(data)})
  },[user])
 const handleDelete=id=>{
- fetch(`http://localhost:3000/mytoys/${id}`)
+ fetch(`http://localhost:3000/mytoys/${id}`,{
+  method:'DELETE'
+ })
  .then(res=>res.json())
  .then(data=>console.log(data))
 }
