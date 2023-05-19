@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import { updateProfile } from 'firebase/auth';
@@ -7,6 +7,7 @@ import { updateProfile } from 'firebase/auth';
 const Register = () => {
     const [error,setError]=useState('')
     const [success,setSuccess]=useState('')
+    const navigate=useNavigate()
  const {user,createUser,logWithGoogle}=useContext(AuthContext)
 
 const handleGoogleLog=()=>{
@@ -34,6 +35,7 @@ const handleGoogleLog=()=>{
     setError('')
     setSuccess('User has been created successfully')
     form.reset()
+    navigate('/')
     console.log(createdUser)
    })
    .catch(error=>{
