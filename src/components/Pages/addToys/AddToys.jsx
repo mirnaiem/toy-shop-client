@@ -1,6 +1,43 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 const AddToys = () => {
+const {user}=useContext(AuthContext)
+  const handleAddToys=event=>{
+    event.preventDefault()
+    const form=event.target;
+    const picture=form.picture.value;
+    const name=form.name.value;
+    const category=form.category.value;
+    const price=form.price.value;
+    const rating=form.rating.value;
+    const quantity=form.quantity.value;
+    const details=form.details.value;
+
+    const toy={
+      picture,
+      name,
+      category,
+      price,
+      rating,
+      quantity,
+      details,
+      seller_name:user.displayName,
+      email:user.email
+    }
+
+    fetch('http://localhost:3000/alltoys',{
+      method: 'POST',
+      headers:{
+        'content-type': 'application/json'
+      },
+      body:JSON.stringify(toy)
+      
+    })
+    .then(res=>res.json())
+    .then(data=>console.log(data))
+    console.log(toy)
+  }
  return (
   <div>
    <div className="bg-[url('https://img.freepik.com/free-photo/halloween-fluffy-toys_23-2147925616.jpg?size=626&ext=jpg&ga=GA1.2.1419972379.1680192737&semt=ais')] h-[300px]   bg-cover bg-no-repeat rounded-lg bg-bottom flex items-center justify-center">
@@ -10,7 +47,7 @@ const AddToys = () => {
    </div>
   <h2 className='text-center my-10  font-serif  text-4xl'>Add Your Favorite <span className='text-orange-500'>Toy</span> </h2>
         
-      <form className='w-full'>
+      <form onSubmit={handleAddToys} className='w-full'>
        <div className='grid w-4/5 mx-auto gap-4 grid-cols-1 md:grid-cols-3 '>
        <div className="form-control">
           <label className="label">
@@ -29,7 +66,7 @@ const AddToys = () => {
           <label className="label">
             <span className="label-text">Seller name</span>
           </label>
-          <input type="text" defaultValue={'seller name'}  className="input input-bordered" />
+          <input type="text" defaultValue={user?.displayName}  className="input input-bordered" />
           
         </div>
        </div>
@@ -38,20 +75,25 @@ const AddToys = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" name='email' placeholder="email" className="input input-bordered" />
+          <input type="email" defaultValue={user?.email} placeholder="email" className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Sub Category</span>
+            <span className="label-text">Category</span>
           </label>
-          <input type="text" name='category' placeholder='category name' className="input input-bordered" />
+          <select className="input input-bordered" name="category" id="">
+            <option value="Architectural Building Kits">Architectural Building Kits</option>
+            <option value="Interlocking Building Toys">Interlocking Building Toys</option>
+            <option value="Construction Vehicle Toys">Construction Vehicle Toys</option>
+          </select>
+         
           
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Price</span>
           </label>
-          <input type="text" name='price' placeholder='price' className="input input-bordered" />
+          <input type="text" name='price' defaultValue={'$'} placeholder='price' className="input input-bordered" />
           
         </div>
        </div>
