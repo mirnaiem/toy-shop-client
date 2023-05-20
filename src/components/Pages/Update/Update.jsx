@@ -44,7 +44,7 @@ const Update = () => {
           <label className="label">
             <span className="label-text">Price</span>
           </label>
-          <input type="text" name='price' defaultValue={price} placeholder='price' className="input input-bordered" />
+          <input type="number" name='price' defaultValue={price} placeholder='price' className="input input-bordered" />
           
         </div>
        

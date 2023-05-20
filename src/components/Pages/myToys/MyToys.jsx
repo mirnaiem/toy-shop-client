@@ -53,7 +53,11 @@ const handleDelete=id=>{
 }
  
  return (
-  <div>
+  <div className='my-16'>
+     <h2 className="text-4xl text-center font-bold mb-8  text-gray-600">
+        My Added{' '}
+        <span className="text-[#ff3300] text-5xl">Toys</span> Information!!
+      </h2>
    <table className="table w-full">
    <thead>
       <tr>

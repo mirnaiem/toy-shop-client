@@ -11,24 +11,33 @@ const AllToys = () => {
     fetch(`https://assignment-11-server-alpha-six.vercel.app/search?name=${searchName}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
         setLoadedToys(data);
       })
       .catch(error => {
         console.error('Error:', error);
       });
   };
+  const handleSortByPrice = () => {
+    const sortedToys = [...loadedToys].sort((a, b) => a.price - b.price);
+    
+    setLoadedToys(sortedToys);
+  };
+  const handleSortByDescendingPrice = () => {
+    const sortedToys = [...loadedToys].sort((a, b) => b.price - a.price);
+    setLoadedToys(sortedToys);
+  };
 
   return (
-    <div>
-      <h2 className="text-4xl text-center font-bold my-10 text-gray-600">
+    <div className='my-16'>
+      <h2 className="text-4xl text-center font-bold  text-gray-600 mb-8">
         You Will Find All The Added{' '}
-        <span className="text-[#ff3300] text-5xl">Toys</span> Here!!
+        <span className="text-[#ff3300] text-5xl">Toys Information</span> Here!!
       </h2>
 
       <div className="form-control">
-        <div className="input-group justify-end mb-5">
-          <input
+        <div className="input-group justify-between mb-5">
+         <div className='flex items-center'>
+         <input
             type="text"
             name="name"
             value={searchName}
@@ -52,6 +61,24 @@ const AllToys = () => {
               />
             </svg>
           </button>
+         </div>
+         <div className="dropdown">
+      <button className="btn dropdown-toggle">
+        Sort By
+      </button>
+      <ul className="menu dropdown-content">
+        <li>
+          <button className="btn border-none bg-slate-950 text-white rounded-lg" onClick={handleSortByPrice}>
+            Ascending
+          </button>
+        </li>
+        <li>
+          <button className="btn text-white border-none bg-slate-950 rounded-lg " onClick={handleSortByDescendingPrice}>
+            Descending
+          </button>
+        </li>
+      </ul>
+    </div>
         </div>
       </div>
 

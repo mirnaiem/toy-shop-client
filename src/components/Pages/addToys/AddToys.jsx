@@ -104,7 +104,7 @@ const {user}=useContext(AuthContext)
           <label className="label">
             <span className="label-text">Price</span>
           </label>
-          <input type="text" name='price' defaultValue={'$'} placeholder='price' className="input input-bordered" />
+          <input type="number" name='price' defaultValue={'$'} placeholder='price' className="input input-bordered" />
           
         </div>
        </div>
