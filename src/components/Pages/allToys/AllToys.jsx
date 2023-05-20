@@ -8,7 +8,7 @@ const AllToys = () => {
   const [searchName, setSearchName] = useState('');
 
   const handleSearch = () => {
-    fetch(`http://localhost:3000/search?name=${searchName}`)
+    fetch(`https://assignment-11-server-alpha-six.vercel.app/search?name=${searchName}`)
       .then(res => res.json())
       .then(data => {
         console.log(data)
