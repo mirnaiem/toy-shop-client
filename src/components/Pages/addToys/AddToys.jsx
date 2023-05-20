@@ -27,7 +27,7 @@ const {user}=useContext(AuthContext)
       email:user.email
     }
 
-    fetch('http://localhost:3000/alltoys',{
+    fetch('https://assignment-11-server-alpha-six.vercel.app/alltoys',{
       method: 'POST',
       headers:{
         'content-type': 'application/json'

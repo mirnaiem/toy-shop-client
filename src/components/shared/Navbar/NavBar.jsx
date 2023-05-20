@@ -1,10 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Provider/AuthProvider';
+import useMediaQuery from '@material-ui/core/useMediaQuery/useMediaQuery';
+
 
 const NavBar = () => {
   const { user, logOutUser } = useContext(AuthContext)
- 
+  const isMobileView = useMediaQuery('(max-width: 767px)')
   const handleLogOut = () => {
     logOutUser()
   }
@@ -29,15 +31,25 @@ const NavBar = () => {
           </ul>
         </div>
         <Link to='/'>
-          <img className='w-full h-full md:h-[120px]' src="https://i.ibb.co/cYDjzkg/Toys.png" alt="" />
-        </Link>
+          <img className='w-[60px]  h-[60px] rounded-full ' src="https://i.ibb.co/cYDjzkg/Toys.png" alt="" />
+        </Link> 
+        {isMobileView ? (
+        <h2 className='text-2xl font-bold hidden md:block-none text-[#ff3300]'>
+          Toys<span className='text-[#79a9e1]'>Truction</span>
+        </h2>
+      ) : (
+        <h2 className='text-2xl font-bold text-[#ff3300]'>
+          Toys<span className='text-[#79a9e1]'>Truction</span>
+        </h2>
+      )}
       </div>
+
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="menu menu-horizontal px-1 text-xl font-semibold">
           {navMenu}
         </ul>
       </div>
-      <div className="navbar-end md:gap-4">
+      <div className="navbar-end  md:gap-4">
         {
           user ? <>
             {user && user.photoURL ? (
@@ -48,8 +60,8 @@ const NavBar = () => {
             <button onClick={handleLogOut} className="btn">LogOut</button>
           </> :
             <div>
-              <Link to="/login"><button className="btn me-4">Login</button></Link>
-              <Link to="/register"><button className="btn">Sign Up</button></Link>
+              <Link to="/login"><button className="btn md:me-4   bg-[#ff7b00b2] border-none">Login</button></Link>
+              <Link to="/register"><button className="btn bg-[#bddd85] border-none">Sign Up</button></Link>
             </div>
         }
 

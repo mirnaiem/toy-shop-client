@@ -11,7 +11,7 @@ const Category = () => {
   const [architects, setArchitects] = useState([])
   const [vehicles, setVehicles] = useState([])
   const [buildings, setBuildings] = useState([])
-  const url1 = ('http://localhost:3000/categories?category=Construction%20Vehicle%20Toys');
+  const url1 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Construction%20Vehicle%20Toys');
   useEffect(() => {
     fetch(url1)
       .then(res => res.json())
@@ -22,7 +22,7 @@ const Category = () => {
   }, [url1])
 
 
-  const url2 = ('http://localhost:3000/categories?category=Architectural%20Building%20Kits');
+  const url2 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Architectural%20Building%20Kits');
   useEffect(() => {
     fetch(url2)
       .then(res => res.json())
@@ -33,7 +33,7 @@ const Category = () => {
   }, [url2])
 
 
-  const url3 = ('http://localhost:3000/categories?category=Interlocking Building Toys');
+  const url3 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Interlocking Building Toys');
   useEffect(() => {
     fetch(url3)
       .then(res => res.json())
@@ -73,7 +73,7 @@ const Category = () => {
           <TabPanel className='grid grid-cols-1 md:grid-cols-3 gap-y-10'>
             {vehicles?.map(vehicle => <div key={vehicle._id}
             >
-              <div className="card card-compact pb-6 md:pb-0  md:pe-6 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
+              <div className="card card-compact p-4  border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
                 <figure><img src={vehicle.picture} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{vehicle.name}</h2>
@@ -97,7 +97,7 @@ const Category = () => {
           <TabPanel className='grid grid-cols-1 md:grid-cols-3 gap-y-10'>
             {architects?.map(archi => <div key={archi._id}
             >
-              <div className="card card-compact pb-6 md:pb-0  md:pe-6 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
+              <div className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
                 <figure><img src={archi.picture} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{archi.name}</h2>
@@ -121,7 +121,7 @@ const Category = () => {
           <TabPanel className='grid grid-cols-1 md:grid-cols-3 gap-y-10'>
             {buildings?.map(building => <div key={building._id}
             >
-              <div className="card card-compact pb-6 md:pb-0  md:pe-6 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
+              <div className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
                 <figure><img src={building.picture} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{building.name}</h2>

@@ -10,7 +10,7 @@ import { ready } from 'localforage';
 const MyToys = () => {
 const [myToys,setMyToys]=useState([])
 const {user}=useContext(AuthContext)
- const url=`http://localhost:3000/mytoys?email=${user?.email}`
+ const url=`https://assignment-11-server-alpha-six.vercel.app/mytoys?email=${user?.email}`
  useEffect(()=>{
   fetch(url)
   .then(res=>res.json())
