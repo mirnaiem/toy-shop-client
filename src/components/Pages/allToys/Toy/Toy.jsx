@@ -1,8 +1,23 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const Toy = ({toy,index}) => {
- console.log(toy)
+const {user}=useContext(AuthContext)
+const navigate=useNavigate()
+const handleViewDetails=id=>{
+  if(user){
+navigate(`/details/${_id}`)
+  }
+  else{
+    Swal.fire({
+      title: 'You Have To Login First',
+    })
+   
+    navigate(`/details/${_id}`)
+  }
+}
  const {seller_name, 
   name,
  category,
@@ -19,7 +34,7 @@ const Toy = ({toy,index}) => {
         <td>{name}</td> 
         <td>{quantity}</td> 
         <td>{price}</td> 
-        <td><Link to={`/details/${_id}`}><button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>View Details</button></Link></td>
+        <td><button onClick={()=>handleViewDetails(_id)} className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>View Details</button></td>
       </tr>
  );
 };

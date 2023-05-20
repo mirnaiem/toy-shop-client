@@ -6,6 +6,7 @@ import Rating from 'react-rating';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { AuthContext } from '../../../Provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const Category = () => {
@@ -21,7 +22,10 @@ const Category = () => {
     navigate(`/details/${id}`)
   }
   else{
-    alert('login-first')
+    Swal.fire({
+      title: 'You Have To Login First',
+     
+    })
     navigate(`/details/${id}`)
   }
   }
