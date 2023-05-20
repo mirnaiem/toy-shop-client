@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Banner = () => {
+  
  return (
   
    <div className="carousel md:w-full md:h-[600px]">
-  <div id="slide1" className="carousel-item  relative w-full">
+  <div id="slide1"  className="carousel-item  relative w-full">
   <img src="https://img.freepik.com/premium-photo/cute-little-indian-boy-playing-with-toy-crane-wearing-yellow-construction-hat-hard-hat-childhood-education-concept-isolated-green-chalkboard_466689-15489.jpg?size=626&ext=jpg&ga=GA1.1.1419972379.1680192737&semt=ais" className="md:w-full  rounded-lg" />
   <div className="absolute flex rounded-lg  bg-gradient-to-r from-[#483320] to-[rgba(21, 21, 21, 0) 100%)] w-3/5  h-full items-center  gap-4 ">
      <div className='text-white w-2/3 space-y-8 ms-10 md:ms-24'>

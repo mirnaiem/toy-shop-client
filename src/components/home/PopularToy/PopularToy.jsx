@@ -2,9 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
+import Aos from 'aos';
+import "aos/dist/aos.css";
 const PopularToy = () => {
-  const [carouselContent, setCarouselContent] = useState([
+ useEffect(()=>{
+  Aos.init({
+   duration:2000
+  })
+},[])
+ const [carouselContent, setCarouselContent] = useState([
     
      <img className='p-4 md:w-full w-4/5 rounded-3xl' src="https://img.freepik.com/free-photo/high-angle-colorful-toys-floor_23-2149311330.jpg?size=626&ext=jpg&ga=GA1.2.1419972379.1680192737&semt=ais" alt="" />,
     <img className='p-4 md:w-full w-4/5 rounded-3xl' src="https://img.freepik.com/premium-photo/toy-cars-collided-accident-crash-toy-road_130040-1842.jpg?size=626&ext=jpg&ga=GA1.2.1419972379.1680192737&semt=ais" alt="" />,
@@ -53,7 +59,7 @@ const PopularToy = () => {
      <Slider {...settings}>
       {carouselContent.map((content, index) => (
         <div key={index}>
-          <div>{content}</div>
+          <div data-aos="fade-up" className='flex justify-center items-center'>{content}</div>
         </div>
       ))}
     </Slider>

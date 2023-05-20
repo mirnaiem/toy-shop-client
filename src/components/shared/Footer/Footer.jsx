@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
  return (
-  <footer className="footer p-10 mx-auto bg-base-200 text-base-content">
+  <footer className="footer border  grid-cols-2 md:grid-cols-4  p-10  bg-base-200 text-base-content">
   <div>
     <img className='w-20 rounded-full ' src="https://i.ibb.co/cYDjzkg/Toys.png" alt="" />
     <p>ToysTruction.<br/>Providing reliable kids playing toys</p>

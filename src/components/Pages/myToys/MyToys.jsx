@@ -10,13 +10,14 @@ import { ready } from 'localforage';
 const MyToys = () => {
 const [myToys,setMyToys]=useState([])
 const {user}=useContext(AuthContext)
+
  const url=`https://assignment-11-server-alpha-six.vercel.app/mytoys?email=${user?.email}`
  useEffect(()=>{
   fetch(url)
   .then(res=>res.json())
   .then(data=>{
    setMyToys(data)
-   console.log(data)})
+   })
  },[user])
 const handleDelete=id=>{
  Swal.fire({
@@ -51,13 +52,39 @@ const handleDelete=id=>{
 })
 
 }
- 
+const handleSortByPrice = () => {
+  const sortedToys = [...myToys].sort((a, b) => a.price - b.price);
+  
+  setMyToys(sortedToys);
+};
+const handleSortByDescendingPrice = () => {
+  const sortedToys = [...myToys].sort((a, b) => b.price - a.price);
+  setMyToys(sortedToys);
+};
  return (
   <div className='my-16'>
      <h2 className="text-4xl text-center font-bold mb-8  text-gray-600">
         My Added{' '}
         <span className="text-[#ff3300] text-5xl">Toys</span> Information!!
       </h2>
+      <div className="dropdown mb-4">
+      <button className="btn dropdown-toggle">
+        Sort By
+      </button>
+      <ul className="menu dropdown-content">
+        <li>
+          <button className="btn border-none bg-slate-950 text-white rounded-lg" onClick={handleSortByPrice}>
+            Ascending
+          </button>
+        </li>
+        <li>
+          <button className="btn text-white border-none bg-slate-950 rounded-lg " onClick={handleSortByDescendingPrice}>
+            Descending
+          </button>
+        </li>
+      </ul>
+    </div>
+
    <table className="table w-full">
    <thead>
       <tr>

@@ -11,7 +11,7 @@ const MyToy = ({toy,index,handleDelete}) => {
   quantity,
   
   }=toy;
-  console.log(toy)
+  
 
  return (
   

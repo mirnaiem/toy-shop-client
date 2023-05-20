@@ -1,5 +1,5 @@
-
-
+import Aos from 'aos';
+import "aos/dist/aos.css";
 import { useContext, useEffect, useState } from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
@@ -10,6 +10,11 @@ import Swal from 'sweetalert2';
 
 
 const Category = () => {
+  useEffect(()=>{
+    Aos.init({
+     duration:2000
+    })
+  },[])
   const {user}=useContext(AuthContext)
   const navigate=useNavigate()
   const location=useLocation()
@@ -91,7 +96,7 @@ const Category = () => {
           <TabPanel className='grid grid-cols-1 md:grid-cols-3 gap-y-10'>
             {vehicles?.map(vehicle => <div key={vehicle._id}
             >
-              <div className="card card-compact p-4  border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
+              <div data-aos="fade-up" className="card card-compact p-4  border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
                 <figure><img src={vehicle.picture} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{vehicle.name}</h2>
@@ -115,7 +120,7 @@ const Category = () => {
           <TabPanel className='grid grid-cols-1 md:grid-cols-3 gap-y-10'>
             {architects?.map(archi => <div key={archi._id}
             >
-              <div className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
+              <div data-aos="fade-up" className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
                 <figure><img src={archi.picture} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{archi.name}</h2>
@@ -139,7 +144,7 @@ const Category = () => {
           <TabPanel className='grid grid-cols-1 md:grid-cols-3 gap-y-10'>
             {buildings?.map(building => <div key={building._id}
             >
-              <div className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
+              <div data-aos="fade-up" className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
                 <figure><img src={building.picture} alt="Shoes" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{building.name}</h2>
