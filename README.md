@@ -5,22 +5,23 @@ In a Brief
 
 * It contain a header section with company title some menu and login, logout and register button.
 
-- Then a banner section with 2part one is Image part and another is text and button and there use a background image.
+- Then a slider banner section .
 
-- A Chef section that contain six card with six chefs information like name, experience, num of recipes, like and a button.
-- If one click view recipes button then he/she can see the details about that chefs where she/he find a banner section that contain bio of the chef and picture of the chef.Again one can see the recipes of the chef.
+- A gallery section where show some of the relevant toys photos.
+- Then a category section where show data category wise each card contain picture, name, rating, price and view details button.
 
 
-- A favorite dishes section that contain some bengali favorite food items.
+- Then a popular toys section where show very popular toys by slick slide show.
 
-- Then a section that contain details about Awesome chef company
-
+- A blog post section where show four card include blog details.
 - Then a footer.
 
-- In the heading button there have Home,blog,login, logout, register .
+- In the heading button there have Home,all toys, my toys,add toys blog,login, logout, register .
 
 - By clicking Home one can see main page of this website.
-
+- by clicking all toys one show all the toys information that are added by all the login user.
+-on the my toys section user can show the data that he/she added in table. where user can update,delete and show view details of the toy. 
+- on the add a toy page one can add toy by inputing toy information
 - By clicking blog option one can show some questions and answers.
 
 - By clicking register button one can sign up.by his name, email, password and photo url
@@ -31,5 +32,5 @@ In a Brief
 
 
 # Live site link of this site
-[live site](https://assignment-10-auth-c0d24.web.app/)
+[live site](https://assignment-11-auth-a17e0.web.app/)
 

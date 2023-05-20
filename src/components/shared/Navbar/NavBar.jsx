@@ -53,11 +53,11 @@ const NavBar = () => {
         {
           user ? <>
             {user && user.photoURL ? (
-              <img className="rounded-full w-10" title={user?.displayName} src={user?.photoURL} />
+              <img className="rounded-full me-2 w-10" title={user?.displayName} src={user?.photoURL} />
             ) : (
               <span title={user?.displayName} className="text-lg font-bold">{user?.displayName}</span>
             )}
-            <button onClick={handleLogOut} className="btn">LogOut</button>
+            <button onClick={handleLogOut} className="btn ">LogOut</button>
           </> :
             <div>
               <Link to="/login"><button className="btn md:me-4   bg-[#ff7b00b2] border-none">Login</button></Link>
