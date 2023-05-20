@@ -63,8 +63,8 @@ const Category = () => {
 
   return (
     <div className="max-w-full  mx-auto my-10 ">
-      <h2 className='text-center text-5xl font-bold my-5'>Shop By Category</h2>
-
+      <h2 className='text-center text-3xl md:text-5xl font-bold text-[#393939]my-5'>Shop By Category</h2>
+      <div className="divider  mx-auto w-1/5"></div>
       <Tabs >
         <TabList className="flex flex-col justify-center md:flex-row   ">
           <Tab
