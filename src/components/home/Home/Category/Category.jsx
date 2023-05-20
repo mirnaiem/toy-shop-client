@@ -1,16 +1,30 @@
 
 
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FaRegStar, FaStar } from 'react-icons/fa';
 import Rating from 'react-rating';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 
 const Category = () => {
+  const {user}=useContext(AuthContext)
+  const navigate=useNavigate()
+  const location=useLocation()
   const [architects, setArchitects] = useState([])
   const [vehicles, setVehicles] = useState([])
   const [buildings, setBuildings] = useState([])
+
+  const handleViewDetails=id=>{
+  if(user){
+    navigate(`/details/${id}`)
+  }
+  else{
+    alert('login-first')
+    navigate(`/details/${id}`)
+  }
+  }
   const url1 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Construction%20Vehicle%20Toys');
   useEffect(() => {
     fetch(url1)
@@ -87,7 +101,7 @@ const Category = () => {
                   <p className='text-xl'>Price: <span className='text-xl font-bold text-orange-500'>{vehicle.price}</span></p>
 
                   <div className="card-actions md:justify-end">
-                    <Link to={`/details/${vehicle._id}`}><button className="btn bg-fuchsia-600 border-none">view details</button></Link>
+                    <button onClick={()=>handleViewDetails(vehicle._id)} className="btn bg-fuchsia-600 border-none">view details</button>
                   </div>
                 </div>
               </div>
@@ -111,7 +125,7 @@ const Category = () => {
                   <p className='text-xl'>Price: <span className='text-xl font-bold text-orange-500'>{archi.price}</span></p>
 
                   <div className="card-actions md:justify-end">
-                    <Link to={`/details/${archi._id}`}><button className="btn bg-fuchsia-600 border-none">view details</button></Link>
+                    <button onClick={()=>handleViewDetails(archi._id)} className="btn bg-fuchsia-600 border-none">view details</button>
                   </div>
                 </div>
               </div>
@@ -135,7 +149,7 @@ const Category = () => {
                   <p className='text-xl'>Price: <span className='text-xl font-bold text-orange-500'>{building.price}</span></p>
 
                   <div className="card-actions md:justify-end">
-                  <Link to={`/details/${building._id}`}><button className="btn bg-fuchsia-600 border-none">view details</button></Link>
+                  <button onClick={()=>handleViewDetails(building._id)} className="btn bg-fuchsia-600 border-none">view details</button>
                   </div>
                 </div>
               </div>

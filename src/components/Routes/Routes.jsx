@@ -12,6 +12,7 @@ import AddToys from "../Pages/addToys/AddToys";
 import Update from "../Pages/Update/Update";
 import Details from "../Pages/Details/Details";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Blog from "../Pages/Blog/Blog";
 
 const router = createBrowserRouter([
  {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       path:'details/:id',
       element:<PrivateRoute><Details></Details></PrivateRoute>,
       loader:({params})=>fetch(`https://assignment-11-server-alpha-six.vercel.app/mytoys/${params.id}`)
+    },
+    {
+      path:'/blogs',
+      element:<Blog></Blog>
     }
    ]
  },
