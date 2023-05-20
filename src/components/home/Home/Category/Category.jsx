@@ -111,7 +111,7 @@ const Category = () => {
                   <p className='text-xl'>Price: <span className='text-xl font-bold text-orange-500'>{archi.price}</span></p>
 
                   <div className="card-actions md:justify-end">
-                    <button className="btn bg-fuchsia-600 border-none">view details</button>
+                    <Link to={`/details/${archi._id}`}><button className="btn bg-fuchsia-600 border-none">view details</button></Link>
                   </div>
                 </div>
               </div>
@@ -135,7 +135,7 @@ const Category = () => {
                   <p className='text-xl'>Price: <span className='text-xl font-bold text-orange-500'>{building.price}</span></p>
 
                   <div className="card-actions md:justify-end">
-                    <button className="btn bg-fuchsia-600 border-none">view details</button>
+                  <Link to={`/details/${building._id}`}><button className="btn bg-fuchsia-600 border-none">view details</button></Link>
                   </div>
                 </div>
               </div>
