@@ -13,8 +13,15 @@ import Update from "../Pages/Update/Update";
 import Details from "../Pages/Details/Details";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import Blog from "../Pages/Blog/Blog";
+import NotFound from "../Pages/NotFound/NotFound";
 
 const router = createBrowserRouter([
+  {
+    
+      path:'*',
+      element:<NotFound></NotFound>
+     
+  },
  {
    path: "/",
    element: <Main></Main>,
