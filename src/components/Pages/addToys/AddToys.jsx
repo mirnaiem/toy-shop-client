@@ -50,7 +50,7 @@ const {user}=useContext(AuthContext)
     console.log(toy)
   }
  return (
-  <div>
+  <div className='my-16'>
    <div className="bg-[url('https://img.freepik.com/free-photo/halloween-fluffy-toys_23-2147925616.jpg?size=626&ext=jpg&ga=GA1.2.1419972379.1680192737&semt=ais')] h-[300px]   bg-cover bg-no-repeat rounded-lg bg-bottom flex items-center justify-center">
  
    <h2 className=' text-4xl w-2/5  text-gray-300 font-bold capitalize '>Unlock Your Child's Imagination and engineering skills.</h2>
@@ -126,7 +126,8 @@ const {user}=useContext(AuthContext)
           <label className="label">
             <span className="label-text">Description</span>
           </label>
-          <input type="text" name='details' placeholder='description' className="input input-bordered" />
+          <textarea  name='details' placeholder='description' className="textarea textarea-bordered textarea-md w-full max-w-xs" ></textarea>
+
           
         </div>
        </div>

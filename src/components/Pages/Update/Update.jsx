@@ -61,7 +61,9 @@ const Update = () => {
           <label className="label">
             <span className="label-text">Description</span>
           </label>
-          <input type="text" name='details' defaultValue={details} placeholder='description' className="input input-bordered" />
+          <textarea defaultValue={details} name='details' className="textarea textarea-bordered textarea-md w-full max-w-xs" ></textarea>
+
+          
           
         </div>
        </div>

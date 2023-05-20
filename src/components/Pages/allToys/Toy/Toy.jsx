@@ -33,7 +33,7 @@ navigate(`/details/${_id}`)
         <td>{category}</td> 
         <td>{name}</td> 
         <td>{quantity}</td> 
-        <td>{price}</td> 
+        <td>${price}</td> 
         <td><button onClick={()=>handleViewDetails(_id)} className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>View Details</button></td>
       </tr>
  );

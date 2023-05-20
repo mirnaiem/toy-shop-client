@@ -56,7 +56,7 @@ const router = createBrowserRouter([
       loader:({params})=>fetch(`https://assignment-11-server-alpha-six.vercel.app/mytoys/${params.id}`)
     },
     {
-      path:'/blog',
+      path:'/blogs',
       element:<Blog></Blog>
     }
    ]

@@ -21,10 +21,10 @@ const MyToy = ({toy,index,handleDelete}) => {
   <td>{category}</td> 
   <td>{name}</td> 
   <td>{quantity}</td> 
-  <td>{price}</td> 
+  <td>${price}</td> 
   <td className='flex gap-4'>
    <Link to={`/details/${_id}`}><button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>View Details</button></Link>
-  <Link to={`/update/${_id}`}> <button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>update</button></Link>
+  <Link to={`/update/${_id}`}> <button className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>Update</button></Link>
    <button onClick={()=>handleDelete(_id)} className='bg-cyan-600 py-2 px-3 rounded-lg text-white mt-2'>X</button>
   </td>
 </tr>
