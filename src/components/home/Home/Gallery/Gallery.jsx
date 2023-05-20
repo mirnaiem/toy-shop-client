@@ -9,7 +9,7 @@ const Gallery = () => {
 },[])
  return (
   <div className='my-5'>
-   <h2 className='text-center text-5xl font-bold text-[#393939]'>Toys Gallery</h2>
+   <h2 className='text-center text-3xl md:text-5xl font-bold text-[#393939]'>Toys Gallery</h2>
    <div className="divider  mx-auto w-1/5"></div> 
    <div className='flex flex-col w-full items-center  md:flex-row gap-4 mt-5'>
     <img data-aos="fade-up" className=' w-[250px] h-[250px] rounded-lg' src="https://img.freepik.com/free-photo/closeup-shot-toy-train-wooden-bridge_181624-22068.jpg?size=626&ext=jpg&ga=GA1.1.1419972379.1680192737&semt=ais" alt="" />
