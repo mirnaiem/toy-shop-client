@@ -93,7 +93,7 @@ const handleGoogleLog=()=>{
                         type="button"
                         className="flex items-center  justify-center w-full p-2 border border-cyan-600 rounded-md focus:ring-2 focus:ring-offset-1 focus:ring-cyan-700"
                     >
-                        <FaGoogle  className="w-5 h-5 fill-current text-cyan-600"></FaGoogle>
+                        <FaGoogle  className="w-5 me-4 h-5 fill-current text-cyan-600"></FaGoogle> Sign up With Google
                     </button>
                    
                     
