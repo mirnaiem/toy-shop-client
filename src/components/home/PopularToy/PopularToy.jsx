@@ -25,7 +25,7 @@ const PopularToy = () => {
   }, [carouselContent.length]);
 
   const settings = {
-    dots: true,
+    
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -50,7 +50,7 @@ const PopularToy = () => {
     <div className='my-20'>
       <h2 className='text-center text-3xl md:text-4xl font-bold text-[#393939] my-5'>Popular Toy</h2>
       <div className="divider mx-auto w-1/5"></div>
-      <Slider {...settings}>
+      <Slider className='w-4/5 md:w-full mx-auto' {...settings}>
         {carouselContent.map((content, index) => (
           <div  key={index}>
             <div className='flex justify-center '>{content}</div>
