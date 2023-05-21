@@ -7,6 +7,7 @@ import UseTitle from '../../Hooks/UseTitle';
 const Details = () => {
  const loadedToy=useLoaderData()
  UseTitle("Details")
+ 
  const {picture, name, seller_name,email, price, rating, quantity,details}=loadedToy;
  return (
   <div className="hero min-h-screen shadow-xl my-10">

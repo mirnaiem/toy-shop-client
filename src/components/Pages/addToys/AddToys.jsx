@@ -4,7 +4,9 @@ import Swal from 'sweetalert2';
 import UseTitle from '../../Hooks/UseTitle';
 
 const AddToys = () => {
+
 const {user}=useContext(AuthContext)
+
 UseTitle("AddToys")
   const handleAddToys=event=>{
     event.preventDefault()

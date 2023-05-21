@@ -34,6 +34,9 @@ const Category = () => {
     navigate(`/details/${id}`)
   }
   }
+
+  // sub-category one------------
+  
   const url1 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Construction%20Vehicle%20Toys');
   useEffect(() => {
     fetch(url1)
@@ -44,6 +47,7 @@ const Category = () => {
       })
   }, [url1])
 
+// sub-category two -----------------------------
 
   const url2 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Architectural%20Building%20Kits');
   useEffect(() => {
@@ -55,6 +59,7 @@ const Category = () => {
       })
   }, [url2])
 
+// sub-category three-----------
 
   const url3 = ('https://assignment-11-server-alpha-six.vercel.app/categories?category=Interlocking Building Toys');
   useEffect(() => {

@@ -10,14 +10,17 @@ const NavBar = () => {
   const handleLogOut = () => {
     logOutUser()
   }
+
+// nav menu content------------
+
   const navMenu = <>
     <li><Link to="/">Home</Link></li>
     <li><Link to="/alltoys">All Toys</Link></li>
     {user && <><li><Link to="/mytoys">My Toys</Link></li>
       <li><Link to="/addtoys">Add A Toy</Link></li></>}
     <li><Link to="/blogs">Blog</Link></li>
-
   </>
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -32,16 +35,16 @@ const NavBar = () => {
         </div>
         <Link to='/'>
           <img className='w-[60px]  h-[60px] rounded-full ' src="https://i.ibb.co/cYDjzkg/Toys.png" alt="" />
-        </Link> 
+        </Link>
         {isMobileView ? (
-        <h2 className='text-2xl font-bold hidden md:block-none text-[#ff3300]'>
-          Toys<span className='text-[#79a9e1]'>Truction</span>
-        </h2>
-      ) : (
-        <h2 className='text-2xl font-bold text-[#ff3300]'>
-          Toys<span className='text-[#79a9e1]'>Truction</span>
-        </h2>
-      )}
+          <h2 className='text-2xl font-bold hidden md:block-none text-[#ff3300]'>
+            Toys<span className='text-[#79a9e1]'>Truction</span>
+          </h2>
+        ) : (
+          <h2 className='text-2xl font-bold text-[#ff3300]'>
+            Toys<span className='text-[#79a9e1]'>Truction</span>
+          </h2>
+        )}
       </div>
 
       <div className="navbar-center hidden lg:flex">

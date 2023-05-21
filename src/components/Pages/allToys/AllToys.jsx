@@ -8,6 +8,7 @@ const AllToys = () => {
   const [loadedToys, setLoadedToys] = useState(loadedData);
   const [searchName, setSearchName] = useState('');
 UseTitle("AllToys")
+
   const handleSearch = () => {
     fetch(`https://assignment-11-server-alpha-six.vercel.app/search?name=${searchName}`)
       .then(res => res.json())
@@ -18,7 +19,7 @@ UseTitle("AllToys")
         console.error('Error:', error);
       });
   };
-  const handleSortByPrice = () => {
+  const handleSortByAscendingPrice = () => {
     const sortedToys = [...loadedToys].sort((a, b) => a.price - b.price);
     
     setLoadedToys(sortedToys);
@@ -69,7 +70,7 @@ UseTitle("AllToys")
       </button>
       <ul className="menu dropdown-content">
         <li>
-          <button className="btn border-none bg-slate-950 text-white rounded-lg" onClick={handleSortByPrice}>
+          <button className="btn border-none bg-slate-950 text-white rounded-lg" onClick={handleSortByAscendingPrice}>
             Ascending
           </button>
         </li>
