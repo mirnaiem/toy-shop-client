@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UseTitle from '../../Hooks/UseTitle';
 
 const NotFound = () => {
+ UseTitle("Not-Found")
  return (
   <div className='  min-h-screen flex flex-col justify-center items-center'>
   <img src="https://img.freepik.com/free-vector/page-found-concept-illustration_114360-1869.jpg?size=626&ext=jpg&ga=GA1.2.1419972379.1680192737&semt=ais" alt="" className="mx-auto" />

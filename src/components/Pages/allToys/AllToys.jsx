@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Toy from './Toy/Toy';
+import UseTitle from '../../Hooks/UseTitle';
 
 const AllToys = () => {
   const loadedData = useLoaderData();
   const [loadedToys, setLoadedToys] = useState(loadedData);
   const [searchName, setSearchName] = useState('');
-
+UseTitle("AllToys")
   const handleSearch = () => {
     fetch(`https://assignment-11-server-alpha-six.vercel.app/search?name=${searchName}`)
       .then(res => res.json())

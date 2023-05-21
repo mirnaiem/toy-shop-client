@@ -97,7 +97,7 @@ const Category = () => {
             {vehicles?.map(vehicle => <div key={vehicle._id}
             >
               <div data-aos="fade-up" className="card card-compact p-4  border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
-                <figure><img src={vehicle.picture} alt="Shoes" /></figure>
+                <figure><img className='h-[250px] w-full' src={vehicle.picture} alt="" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{vehicle.name}</h2>
                   <Rating
@@ -121,7 +121,7 @@ const Category = () => {
             {architects?.map(archi => <div key={archi._id}
             >
               <div data-aos="fade-up" className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
-                <figure><img src={archi.picture} alt="Shoes" /></figure>
+                <figure><img className='h-[250px] w-full' src={archi.picture} alt="" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{archi.name}</h2>
                   <Rating
@@ -145,7 +145,7 @@ const Category = () => {
             {buildings?.map(building => <div key={building._id}
             >
               <div data-aos="fade-up" className="card card-compact p-4 border-b  md:border-b-0 md:border-e  bg-base-100 rounded-none">
-                <figure><img src={building.picture} alt="Shoes" /></figure>
+                <figure><img className='h-[250px] w-full' src={building.picture} alt="" /></figure>
                 <div className="card-body">
                   <h2 className="card-title capitalize">{building.name}</h2>
                   <Rating
